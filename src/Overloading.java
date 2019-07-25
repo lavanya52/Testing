@@ -1,3 +1,7 @@
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class Overloading {
 	int x;
@@ -14,6 +18,7 @@ public class Overloading {
 		this.b=b;
 		int area=a*b;
 		System.out.println("Area of triangle is="+area);
+		
 	}
 	
 
@@ -21,6 +26,12 @@ public class Overloading {
  {
 	Overloading o=new Overloading(4);
 	Overloading o1=new Overloading(2,3);
+	Logger log = Logger.getLogger("my.logger");
+	log.setLevel(Level.ALL);
+	ConsoleHandler handler = new ConsoleHandler();
+	handler.setFormatter(new SimpleFormatter());
+	log.addHandler(handler);
+	log.info("hello world");
 	
  }
 }
